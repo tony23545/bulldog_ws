@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot name="yuntai_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:include filename="$(find bulldog_description)/urdf/accessories/dynamixel_AX12_fixed.urdf.xacro" />
+
+<property name="M_PI" value="3.141592654"/>
+
+  <link name="yuntai_base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.1 0.1"/>
+      </geometry>
+      <material name="Grey" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="yuntai_base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="yuntai_shoulder_pan_joint" type="fixed">
+    <origin xyz="-0.025 -0.01 0 " rpy="${M_PI/2} ${M_PI/2} 0" />
+    <parent link="yuntai_base_link"/>
+    <child link="yuntai_shoulder_pan_link" />
+  </joint>
+
+<dynamixel_AX12_fixed parent="yuntai_base_link" name="yuntai_shoulder_pan">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</dynamixel_AX12_fixed>
+
+  
+<joint name="yuntai_shoulder_elbow_joint" type="fixed">
+  <origin xyz="0 -0.06 0 " rpy="${M_PI/2} 0 0" />
+  <parent link="yuntai_shoulder_pan_link"/>
+  <child link="yuntai_shoulder_elbow_link" />
+  <!--axis xyz="0 1 0" />
+  <limit lower="${-2 * M_PI}" upper="${2 * M_PI}" effort="54.0" velocity="0.8"/-->
+</joint>
+
+<dynamixel_AX12_fixed parent="yuntai_shoulder_pan_link" name="yuntai_shoulder_elbow">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</dynamixel_AX12_fixed>
+
+  <link name="camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.065 0.25 0.065"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.065 0.25 0.065"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="camera_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+<joint name="kinect2_joint" type="fixed">
+  <origin xyz="0 0 0.06 " rpy="0 0 ${M_PI}" />
+  <parent link="yuntai_shoulder_elbow_link"/>
+  <child link="camera_link" />
+  <!--axis xyz="0 1 0" />
+  <limit lower="${-1* M_PI}" upper="${1 * M_PI}" effort="54.0" velocity="0.8"/-->
+</joint>
+
+</robot>

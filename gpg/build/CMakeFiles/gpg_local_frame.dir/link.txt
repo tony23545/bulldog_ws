@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_local_frame.a  CMakeFiles/gpg_local_frame.dir/src/gpg/local_frame.cpp.o
+/usr/bin/ranlib libgpg_local_frame.a

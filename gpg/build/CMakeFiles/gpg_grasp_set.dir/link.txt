@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_grasp_set.a  CMakeFiles/gpg_grasp_set.dir/src/gpg/grasp_set.cpp.o
+/usr/bin/ranlib libgpg_grasp_set.a

@@ -1,0 +1,27 @@
+<launch>
+
+  <arg name="prefix" default="" />
+  <arg name="min_payload"  default="0.0"/>
+  <arg name="max_payload"  default="3.0"/>
+  <arg name="max_velocity" default="5.0"/> 
+  <arg name="servoj_time" default="0.008" />
+  <arg name="base_frame" default="$(arg prefix)base_link" />
+  <arg name="tool_frame" default="$(arg prefix)tool0_controller" />
+
+  <include file="$(find bulldog_gazebo_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/> 
+    <param name="rate" value="50"/>
+    <rosparam param="source_list">[left_arm/joint_states, left_arm/joint_states]</rosparam>
+  </node-->
+
+  <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /-->
+
+  <include file="$(find bulldog_gazebo_moveit_config)/launch/move_group.launch" />
+
+
+
+</launch>

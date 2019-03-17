@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_hand_search.a  CMakeFiles/gpg_hand_search.dir/src/gpg/hand_search.cpp.o
+/usr/bin/ranlib libgpg_hand_search.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_config_file.a  CMakeFiles/gpg_config_file.dir/src/gpg/config_file.cpp.o
+/usr/bin/ranlib libgpg_config_file.a

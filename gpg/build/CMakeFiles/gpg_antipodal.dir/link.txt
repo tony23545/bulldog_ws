@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_antipodal.a  CMakeFiles/gpg_antipodal.dir/src/gpg/antipodal.cpp.o
+/usr/bin/ranlib libgpg_antipodal.a

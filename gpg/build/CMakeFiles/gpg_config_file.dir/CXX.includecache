@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/gpg/config_file.h
+fstream
+-
+iostream
+-
+map
+-
+string
+-
+sstream
+-
+typeinfo
+-
+
+/home/shengjian/bulldog_ws/gpg/src/gpg/config_file.cpp
+gpg/config_file.h
+-
+

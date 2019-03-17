@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpg_point_list.a  CMakeFiles/gpg_point_list.dir/src/gpg/point_list.cpp.o
+/usr/bin/ranlib libgpg_point_list.a
