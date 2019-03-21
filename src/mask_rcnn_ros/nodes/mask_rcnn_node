@@ -14,7 +14,8 @@ import utils
 import model as modellib
 import visualize
 from mask_rcnn_ros.msg import Result
-from mask_rcnn_ros.srv import MaskDetect
+from mask_rcnn_ros.srv import *
+import IPython
 
 
 # Local path to trained weights file
@@ -77,7 +78,9 @@ class MaskRCNNNode(object):
 
         self._publish_rate = rospy.get_param('~publish_rate', 100)
 
-    def run(self, input_image):
+        self._service = rospy.Service('mask_rcnn_srv', MaskDetect, self.run)
+
+    def run(self, req):
         '''
         self._result_pub = rospy.Publisher('~result', Result, queue_size=1)
         vis_pub = rospy.Publisher('~visualization', Image, queue_size=1)
@@ -111,16 +114,23 @@ class MaskRCNNNode(object):
 
             rate.sleep()
             '''
-        np_image = self._cv_bridge.imgmsg_to_cv2(input_image, 'bgr8')
+        np_image = self._cv_bridge.imgmsg_to_cv2(req.input_image, 'bgr8')
+        print("detecting...")
         results = self._model.detect([np_image], verbose=0)
         result = results[0]
-        result_msg = self._build_result_msg(msg, result)
-        if self._visualization:
+        IPython.embed()
+        result_msg = self._build_result_msg(input_image, result)
+        return result_msg
+
+        '''
+        result_msg = self._build_result_msg(input_image, result)
+        if True:
             vis_pub = rospy.Publisher('~visualization', Image, queue_size=1)
             cv_result = self._visualize_cv(result, np_image)
             image_msg = self._cv_bridge.cv2_to_imgmsg(cv_result, 'bgr8')
             vis_pub.publish(image_msg)
         return result_msg
+        '''
 
 
     def _build_result_msg(self, msg, result):
@@ -152,7 +162,6 @@ class MaskRCNNNode(object):
             mask.step = mask.width
             mask.data = (result['masks'][:, :, i] * 255).tobytes()
             result_msg.masks.append(mask)
-            result_msg.raw_image = self._last_msg
         return result_msg
 
     def _visualize(self, result, image):
@@ -191,13 +200,24 @@ class MaskRCNNNode(object):
             self._last_msg = msg
             self._msg_lock.release()
 
-
+'''
 def detect_mask(req):
+    print("ready to detect mask")
+    node = MaskRCNNNode()
     return MaskDetectResponse(node.run(req.input_image))
 
-
-node = MaskRCNNNode()
 rospy.init_node('mask_rcnn')
 s = rospy.Service('mask_rcnn_srv', MaskDetect, detect_mask)
-print("Ready to add two ints.")
+print("Ready to detect mask.")
 rospy.spin()
+'''
+
+def main():
+    rospy.init_node('mask_rcnn')
+
+    node = MaskRCNNNode()
+    rospy.spin()
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,1 @@
+/usr/bin/c++  -DNDEBUG -O3 -fopenmp -Wno-deprecated -Wenum-compare    -rdynamic CMakeFiles/gpd_test_conv_layer.dir/src/tests/test_conv_layer.cpp.o  -o /home/shengjian/bulldog_ws/devel/lib/gpd/test_conv_layer  -L/usr/local/cuda-10.0/lib64 -Wl,-rpath,/usr/local/cuda-10.0/lib64:/home/shengjian/bulldog_ws/devel/lib /home/shengjian/bulldog_ws/devel/lib/libgpd_conv_layer.so 

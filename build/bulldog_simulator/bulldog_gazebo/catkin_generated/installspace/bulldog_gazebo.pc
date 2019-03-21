@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/install
+
+Name: bulldog_gazebo
+Description: Description of bulldog_gazebo
+Version: 0.2.5
+Cflags: 
+Libs: -L/home/shengjian/bulldog_ws/install/lib 
+Requires: 

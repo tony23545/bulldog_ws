@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/install
+
+Name: rviz_bulldog_commander
+Description: Description of rviz_bulldog_commander
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/shengjian/bulldog_ws/install/lib 
+Requires: 
