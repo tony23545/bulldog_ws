@@ -11,15 +11,13 @@ if __name__ == "__main__":
 	if not rospy.is_shutdown():
 		print("getting image...")
 		image = rospy.wait_for_message("/camera/rgb/image_raw", Image)
-		pc2 = rospy.wait_for_message("/camera/depth/points", PointCloud2)
+		#pc2 = rospy.wait_for_message("/camera/depth/points", PointCloud2)
 	
 	print("waiting for service...")
 	rospy.wait_for_service("mask_rcnn_srv")
 	try:
 		mask_srv = rospy.ServiceProxy("mask_rcnn_srv", MaskDetect)
 		response = mask_srv(image)
-		print("finish detecting")		
+		print("finish detecting")	
 	except rospy.ServiceException, e:
 		print "service call failed: %s"%e
-
-
