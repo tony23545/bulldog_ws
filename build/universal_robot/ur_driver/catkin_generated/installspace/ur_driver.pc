@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/install
+
+Name: ur_driver
+Description: Description of ur_driver
+Version: 1.1.11
+Cflags: -I/home/shengjian/bulldog_ws/install/include
+Libs: -L/home/shengjian/bulldog_ws/install/lib 
+Requires: dynamic_reconfigure

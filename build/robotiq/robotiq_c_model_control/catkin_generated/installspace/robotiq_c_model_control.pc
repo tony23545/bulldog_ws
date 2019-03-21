@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/install
+
+Name: robotiq_c_model_control
+Description: Description of robotiq_c_model_control
+Version: 1.0.0
+Cflags: -I/home/shengjian/bulldog_ws/install/include
+Libs: -L/home/shengjian/bulldog_ws/install/lib 
+Requires: rospy message_runtime roscpp robotiq_ethercat

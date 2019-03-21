@@ -1,0 +1,14 @@
+/usr/local/lib/libgrasp_candidates_generator.so
+/usr/local/include/gpg/candidates_generator.h
+/usr/local/include/gpg/plot.h
+/usr/local/include/gpg/finger_hand.h
+/usr/local/include/gpg/cloud_camera.h
+/usr/local/include/gpg/local_frame.h
+/usr/local/include/gpg/frame_estimator.h
+/usr/local/include/gpg/grasp.h
+/usr/local/include/gpg/config_file.h
+/usr/local/include/gpg/eigen_utils.h
+/usr/local/include/gpg/point_list.h
+/usr/local/include/gpg/hand_search.h
+/usr/local/include/gpg/grasp_set.h
+/usr/local/include/gpg/antipodal.h

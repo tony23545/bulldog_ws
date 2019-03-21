@@ -1,0 +1,2 @@
+set(gpd_MESSAGE_FILES "/home/shengjian/bulldog_ws/src/gpd/msg/CloudIndexed.msg;/home/shengjian/bulldog_ws/src/gpd/msg/CloudSamples.msg;/home/shengjian/bulldog_ws/src/gpd/msg/CloudSources.msg;/home/shengjian/bulldog_ws/src/gpd/msg/GraspConfig.msg;/home/shengjian/bulldog_ws/src/gpd/msg/GraspConfigList.msg;/home/shengjian/bulldog_ws/src/gpd/msg/SamplesMsg.msg")
+set(gpd_SERVICE_FILES "/home/shengjian/bulldog_ws/src/gpd/srv/detect_grasps.srv")

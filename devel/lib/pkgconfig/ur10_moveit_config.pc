@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/devel
+
+Name: ur10_moveit_config
+Description: Description of ur10_moveit_config
+Version: 1.1.11
+Cflags: 
+Libs: -L/home/shengjian/bulldog_ws/devel/lib 
+Requires: 

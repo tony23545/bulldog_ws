@@ -15,7 +15,6 @@ import model as modellib
 import visualize
 from mask_rcnn_ros.msg import Result
 from mask_rcnn_ros.srv import *
-import IPython
 
 
 # Local path to trained weights file
@@ -68,6 +67,7 @@ class MaskRCNNNode(object):
             utils.download_trained_weights(COCO_MODEL_PATH)
 
         self._model.load_weights(model_path, by_name=True)
+        self._model.keras_model._make_predict_function()
 
         self._class_names = rospy.get_param('~class_names', CLASS_NAMES)
 
@@ -116,11 +116,29 @@ class MaskRCNNNode(object):
             '''
         np_image = self._cv_bridge.imgmsg_to_cv2(req.input_image, 'bgr8')
         print("detecting...")
+        #clear_session()
         results = self._model.detect([np_image], verbose=0)
         result = results[0]
-        IPython.embed()
-        result_msg = self._build_result_msg(input_image, result)
-        return result_msg
+        result_msg = self._build_result_msg(req.input_image, result)
+
+        #visualization
+        #not working currently...
+        vis_pub = rospy.Publisher('~visualization', Image, queue_size=1)
+        cv_result = self._visualize_cv(result, np_image)
+        image_msg = self._cv_bridge.cv2_to_imgmsg(cv_result, 'bgr8')
+        vis_pub.publish(image_msg)
+
+        indices = []
+        if len(response.result.masks) > 0:
+            mask = response.result.masks[0]
+            for i in range(mask.step * mask.height):
+                if mask.data[i] == '\xff':
+                    indices.append(i)
+            print(len(indices))
+        else:
+            print("detect nothing")
+
+        return indices
 
         '''
         result_msg = self._build_result_msg(input_image, result)
