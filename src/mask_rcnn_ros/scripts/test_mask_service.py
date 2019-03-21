@@ -18,6 +18,6 @@ if __name__ == "__main__":
 	try:
 		mask_srv = rospy.ServiceProxy("mask_rcnn_srv", MaskDetect)
 		response = mask_srv(image)
-		print("finish detecting")	
+		print(len(response.indices))
 	except rospy.ServiceException, e:
 		print "service call failed: %s"%e

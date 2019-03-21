@@ -37,6 +37,7 @@
   <build_depend>roscpp</build_depend>
   <build_depend>sensor_msgs</build_depend> 
   <build_depend>std_msgs</build_depend> 
+  <build_depend>mask_rcnn_ros</build_depend>>
   
   <!-- Use run_depend for packages you need at runtime: -->
   <run_depend>cmake_modules</run_depend>

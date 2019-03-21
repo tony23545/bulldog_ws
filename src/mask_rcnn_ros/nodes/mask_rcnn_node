@@ -129,6 +129,7 @@ class MaskRCNNNode(object):
         image_msg = self._cv_bridge.cv2_to_imgmsg(cv_result, 'bgr8')
         vis_pub.publish(image_msg)
 
+        '''
         indices = []
         if len(result_msg.masks) > 0:
             mask = result_msg.masks[0]
@@ -138,8 +139,9 @@ class MaskRCNNNode(object):
             print(result_msg.class_names)
         else:
             print("detect nothing")
+        '''
 
-        return indices
+        return result_msg
 
         '''
         result_msg = self._build_result_msg(input_image, result)
