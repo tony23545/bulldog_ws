@@ -11,12 +11,12 @@ make
 sudo make install  
 cd ..  
 catkin_make  
-## Test Maks_rcnn_ros pkg
+## Test Mask_rcnn_ros pkg
 roslaunch bulldog_gazebo bulldog_empty_world.launch  
 (manually add something in the vision of the robot, like a can of beer)  
 roslaunch mask_rcnn_ros simply.launch  
 rosrun mask_rcnn_ros test_mask_service.py  
-## Test Maks_rcnn_ros with GPD
+## Test Mask_rcnn_ros with GPD
 roslaunch bulldog_gazebo bulldog_empty_world.launch  
 (manually add something in the vision of the robot, like a can of beer)  
 roslaunch mask_rcnn_ros simply.launch  
