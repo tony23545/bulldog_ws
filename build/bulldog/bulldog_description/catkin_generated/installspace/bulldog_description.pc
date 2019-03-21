@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/install
-
-Name: bulldog_description
-Description: Description of bulldog_description
-Version: 2.0.0
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/install/lib 
-Requires: 

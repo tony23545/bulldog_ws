@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -DNDEBUG -O3 -fopenmp -Wno-deprecated -Wenum-compare   -shared -Wl,-soname,libgpd_conv_layer.so -o /home/shengjian/bulldog_ws/devel/lib/libgpd_conv_layer.so CMakeFiles/gpd_conv_layer.dir/src/gpd/conv_layer.cpp.o  -L/usr/local/cuda-10.0/lib64 
