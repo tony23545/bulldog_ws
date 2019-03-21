@@ -1,0 +1,41 @@
+#!/bin/bash
+# Description: Sanity check script which will publish the status of each relevant topic in simulation to let you know
+# if this sim is ready to use.
+
+# Check grippers
+
+# Check arms
+
+# Check GPS
+
+# Check bumblebee camera topics
+
+# Check IMU
+
+# Check lasers
+
+# Check velocity/cmdvel
+class BasicTopic:
+    def __init__(self, topic_name, listeners, publishers):
+        self.listeners = listeners
+        self.publishers = publishers
+
+# A list of BasicTopics
+
+
+def check_all():
+
+    for topic in topic_names:
+        exists =  check_topic_exists()
+        if exists:
+            rospy.loginfo("rostopic " + topic_name + "exists")
+
+    check_topic_info(topic_name)
+    #TODO Investigate the output data and provide insight
+
+# Main
+if __name__ == '__main__':
+    try:
+        check_all()
+    except rospy.ROSInterruptException:
+        pass

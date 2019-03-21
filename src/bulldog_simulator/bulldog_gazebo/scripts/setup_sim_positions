@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# We have to do this because Gazebo sucks and -J option doesn't work. Note this only works if Gazebo is paused first so we pause it first, then unpause.
+#rosservice call --wait /gazebo/pause_physics
+
+rosservice call --wait /gazebo/unpause_physics
+rosrun bulldog_control stow_ur5_left &
+rosrun bulldog_control stow_ur5_right &
