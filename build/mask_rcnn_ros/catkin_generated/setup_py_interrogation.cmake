@@ -1,6 +1,0 @@
-set(mask_rcnn_ros_SETUP_PY_VERSION "0.1.0")
-set(mask_rcnn_ros_SETUP_PY_SCRIPTS "")
-set(mask_rcnn_ros_SETUP_PY_PACKAGES "mask_rcnn_ros")
-set(mask_rcnn_ros_SETUP_PY_PACKAGE_DIRS "src/mask_rcnn_ros")
-set(mask_rcnn_ros_SETUP_PY_MODULES "")
-set(mask_rcnn_ros_SETUP_PY_MODULE_DIRS "")

@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/devel
-
-Name: robotiq_s_model_articulated_gazebo_plugins
-Description: Description of robotiq_s_model_articulated_gazebo_plugins
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/devel/lib 
-Requires: gazebo_plugins gazebo_ros robotiq_s_model_articulated_msgs roscpp

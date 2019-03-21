@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -DNDEBUG -O3 -fopenmp -Wno-deprecated -Wenum-compare   -shared -Wl,-soname,libgpd_dense_layer.so -o /home/shengjian/bulldog_ws/devel/lib/libgpd_dense_layer.so CMakeFiles/gpd_dense_layer.dir/src/gpd/dense_layer.cpp.o  -L/usr/local/cuda-10.0/lib64 

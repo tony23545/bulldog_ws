@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/install
-
-Name: ur_bringup
-Description: Description of ur_bringup
-Version: 1.1.11
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/install/lib 
-Requires: 

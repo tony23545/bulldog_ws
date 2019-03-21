@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/install
-
-Name: bulldog_motion
-Description: Description of bulldog_motion
-Version: 0.1.0
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/install/lib 
-Requires: moveit_core moveit_ros_planning_interface interactive_markers message_runtime

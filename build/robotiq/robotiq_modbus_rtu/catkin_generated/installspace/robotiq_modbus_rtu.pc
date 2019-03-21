@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/install
-
-Name: robotiq_modbus_rtu
-Description: Description of robotiq_modbus_rtu
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/install/lib 
-Requires: rospy

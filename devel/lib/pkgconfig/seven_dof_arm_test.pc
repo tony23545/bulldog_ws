@@ -1,8 +1,0 @@
-prefix=/home/shengjian/bulldog_ws/devel
-
-Name: seven_dof_arm_test
-Description: Description of seven_dof_arm_test
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/shengjian/bulldog_ws/devel/lib 
-Requires: 
