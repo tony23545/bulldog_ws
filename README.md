@@ -26,5 +26,6 @@ roslaunch bulldog_gazebo bulldog_empty_world.launch
 (manually add something in the vision of the robot, like a can of beer)  
 roslaunch mask_rcnn_ros simply.launch  
 roslaunch gpd grasp_detection_service.launch  
+rosrun gpd pc_transform_server
 rosrun gpd gpd_mask_test.py  
 ```
