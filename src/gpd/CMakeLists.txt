@@ -5,7 +5,7 @@ project(gpd)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS cmake_modules eigen_conversions geometry_msgs message_generation roscpp
-  sensor_msgs std_msgs mask_rcnn_ros)
+  sensor_msgs std_msgs mask_rcnn_ros pcl_ros pcl_conversions)
 
 # PCL
 find_package(PCL REQUIRED)
@@ -62,7 +62,7 @@ add_message_files(FILES CloudIndexed.msg CloudSamples.msg CloudSources.msg Grasp
   SamplesMsg.msg)
 
 ## Generate services in the 'srv' folder
-add_service_files(FILES detect_grasps.srv)
+add_service_files(FILES detect_grasps.srv pc_transform.srv)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -145,6 +145,10 @@ add_executable(${PROJECT_NAME}_test_grasp_image src/tests/test_grasp_image.cpp)
 add_executable(${PROJECT_NAME}_test_conv_layer src/tests/test_conv_layer.cpp)
 add_executable(${PROJECT_NAME}_test_lenet src/tests/test_lenet.cpp)
 add_executable(${PROJECT_NAME}_test_service src/tests/test_service.cpp)
+
+add_executable(${PROJECT_NAME}_pc_transform_server src/nodes/pc_transform_server.cpp)
+
+
 
 
 ## Add cmake target dependencies of the executable
@@ -241,6 +245,11 @@ target_link_libraries(${PROJECT_NAME}_learning
                       ${GENERATOR_LIB}
                       ${catkin_LIBRARIES})
 
+target_link_libraries(${PROJECT_NAME}_pc_transform_server 
+                      ${catkin_LIBRARIES} 
+                      ${GENERATOR_LIB}
+                      ${PCL_LIBRARIES})
+
 add_dependencies(${PROJECT_NAME}_detect_grasps ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(${PROJECT_NAME}_detect_grasps_server ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(${PROJECT_NAME}_generate_candidates ${PROJECT_NAME}_generate_messages_cpp)
@@ -251,6 +260,7 @@ add_dependencies(${PROJECT_NAME}_test_grasp_image ${PROJECT_NAME}_generate_messa
 add_dependencies(${PROJECT_NAME}_test_conv_layer ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(${PROJECT_NAME}_test_lenet ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(${PROJECT_NAME}_test_service ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(${PROJECT_NAME}_pc_transform_server ${PROJECT_NAME}_generate_messages_cpp)
 
 # Rename targets to simplify their names.
 set_target_properties(${PROJECT_NAME}_detect_grasps
@@ -287,4 +297,8 @@ set_target_properties(${PROJECT_NAME}_test_lenet
 
 set_target_properties(${PROJECT_NAME}_test_service
                       PROPERTIES OUTPUT_NAME test_service
+                      PREFIX "")
+
+set_target_properties(${PROJECT_NAME}_pc_transform_server
+                      PROPERTIES OUTPUT_NAME pc_transform_server
                       PREFIX "")

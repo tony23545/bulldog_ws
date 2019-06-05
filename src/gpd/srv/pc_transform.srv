@@ -1,0 +1,3 @@
+sensor_msgs/PointCloud2 in_cloud
+---
+sensor_msgs/PointCloud2 out_cloud

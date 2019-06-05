@@ -115,6 +115,10 @@ public:
    * \param workspace the robot's workspace
    * \return the grasps that are inside the robot's workspace
    */
+
+  std::vector<GraspSet> filterGraspOnApproach(const std::vector<GraspSet>& hand_set_list);
+
+
   std::vector<GraspSet> filterGraspsWorkspace(const std::vector<GraspSet>& hand_set_list,
     const std::vector<double>& workspace);
   

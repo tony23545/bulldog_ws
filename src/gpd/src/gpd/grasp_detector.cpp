@@ -136,6 +136,11 @@ std::vector<Grasp> GraspDetector::detectGrasps(const CloudCamera& cloud_cam)
     return selected_grasps;
   }
 
+  // --------------------------------- specific requirement for our robot -----------------------
+  //2.0 Prune grasp candidates based on approach
+  //candidates = filterGraspOnApproach(candidates);
+  // --------------------------------------------------------------------------------------------
+
   // 2.1 Prune grasp candidates based on min. and max. robot hand aperture and fingers below table surface.
   if (filter_grasps_)
   {
@@ -360,6 +365,29 @@ std::vector<Grasp> GraspDetector::classifyGraspCandidates(const CloudCamera& clo
   return selected_grasps;
 }
 
+std::vector<GraspSet> GraspDetector::filterGraspOnApproach(const std::vector<GraspSet>& hand_set_list){
+  std::vector<GraspSet> hand_set_list_out;
+  for(int i = 0; i < hand_set_list.size(); i++){
+    const std::vector<Grasp>& hands = hand_set_list[i].getHypotheses();
+    Eigen::Array<bool, 1, Eigen::Dynamic> is_valid = hand_set_list[i].getIsValid();
+   
+    for(int j = 0; j < hands.size(); j++){
+      Eigen::Vector3d approach = hands[j].getApproach();
+      Eigen::Vector3d bottom = hands[j].getGraspBottom();
+      Eigen::Vector3d axis = hands[j].getAxis();
+      if((axis(2) > 0.1 || axis(2) < -0.1) && (approach(0) > 0.0) && bottom(0) > 0.1)
+        is_valid(j) = true;
+      else
+        is_valid(j) = false;
+    }
+    if (is_valid.any())
+    {
+      hand_set_list_out.push_back(hand_set_list[i]);
+      hand_set_list_out[hand_set_list_out.size() - 1].setIsValid(is_valid);
+    }
+  }
+  return hand_set_list_out;
+}
 
 std::vector<GraspSet> GraspDetector::filterGraspsWorkspace(const std::vector<GraspSet>& hand_set_list,
   const std::vector<double>& workspace)

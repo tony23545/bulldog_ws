@@ -19,9 +19,9 @@
     <param name="plot_samples" value="false" />  <!-- This is the one to show all grasp candidates in RViz, if you plot -->
     <param name="plot_candidates" value="false" />
     <param name="plot_filtered_grasps" value="false" />
-    <param name="plot_valid_grasps" value="false" />
+    <param name="plot_valid_grasps" value="true" />
     <param name="plot_clusters" value="false" />
-    <param name="plot_selected_grasps" value="false" />
+    <param name="plot_selected_grasps" value="true" />
     <param name="rviz_topic" value="grasps_rviz" />
 
     <!-- Preprocessing of point cloud -->
