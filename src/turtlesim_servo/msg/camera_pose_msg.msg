@@ -1,0 +1,2 @@
+float32 cam_pos_x
+float32 cam_pos_y

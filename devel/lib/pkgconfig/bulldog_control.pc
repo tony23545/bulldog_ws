@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/devel
+
+Name: bulldog_control
+Description: Description of bulldog_control
+Version: 0.2.7
+Cflags: 
+Libs: -L/home/shengjian/bulldog_ws/devel/lib 
+Requires: 

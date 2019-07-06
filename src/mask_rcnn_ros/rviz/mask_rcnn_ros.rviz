@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /Image1
         - /Image2
+        - /MarkerArray1
       Splitter Ratio: 0.755814
     Tree Height: 614
   - Class: rviz/Selection
@@ -74,6 +75,14 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: visualization_marker_array
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -98,7 +107,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.30293
+      Distance: 19.2395
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -133,5 +142,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1259
-  X: 86
-  Y: 46
+  X: 468
+  Y: 225

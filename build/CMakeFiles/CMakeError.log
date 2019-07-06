@@ -1,0 +1,144 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bf0af/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf0af.dir/build.make CMakeFiles/cmTC_bf0af.dir/build
+make[1]: Entering directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf0af.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bf0af.dir/CheckSymbolExists.c.o   -c /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bf0af
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf0af.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bf0af.dir/CheckSymbolExists.c.o  -o cmTC_bf0af 
+CMakeFiles/cmTC_bf0af.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_bf0af] Error 1
+make[1]: Leaving directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_bf0af/fast] Error 2
+
+File /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6c469/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6c469.dir/build.make CMakeFiles/cmTC_6c469.dir/build
+make[1]: Entering directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6c469.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_6c469.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.11/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6c469
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c469.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_6c469.dir/CheckFunctionExists.c.o  -o cmTC_6c469 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_6c469] Error 1
+make[1]: Leaving directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_6c469/fast] Error 2
+
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3542c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3542c.dir/build.make CMakeFiles/cmTC_3542c.dir/build
+make[1]: Entering directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3542c.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -I/usr/include/qt4   -o CMakeFiles/cmTC_3542c.dir/CheckSymbolExists.cxx.o -c /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+make[1]: *** [CMakeFiles/cmTC_3542c.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_3542c/fast] Error 2
+
+File /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5e3b3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5e3b3.dir/build.make CMakeFiles/cmTC_5e3b3.dir/build
+make[1]: Entering directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5e3b3.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -I/usr/include/qt4   -o CMakeFiles/cmTC_5e3b3.dir/CheckSymbolExists.cxx.o -c /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+make[1]: *** [CMakeFiles/cmTC_5e3b3.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_5e3b3/fast] Error 2
+
+File /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5410b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5410b.dir/build.make CMakeFiles/cmTC_5410b.dir/build
+make[1]: Entering directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5410b.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++   -I/usr/include/qt4   -o CMakeFiles/cmTC_5410b.dir/CheckSymbolExists.cxx.o -c /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+make[1]: *** [CMakeFiles/cmTC_5410b.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTC_5410b/fast] Error 2
+
+File /home/shengjian/bulldog_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

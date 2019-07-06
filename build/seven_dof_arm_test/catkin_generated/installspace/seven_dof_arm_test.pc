@@ -1,0 +1,8 @@
+prefix=/home/shengjian/bulldog_ws/install
+
+Name: seven_dof_arm_test
+Description: Description of seven_dof_arm_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/shengjian/bulldog_ws/install/lib 
+Requires: 
